@@ -40,10 +40,14 @@ const MovieDetails = async ({ params: { id } }: Props) => {
   return (
     <div>
       <div className="px-10 w-[1440px] m-auto">
-        <div className="py-10 flex-col lg:flex-row items-center gap-5 justify-center">
+        <div className="py-10 flex-col lg:flex-row items-center gap-5 justify-center ">
           <h2 className="text-2xl font-semibold mb-4">
             {details?.original_title}
           </h2>
+              <p className="text-foreground text-sm mb-5">
+              Release Data:{" "}
+              <span className=" font-medium">{details.release_date}</span>
+            </p>
           <div className="w-full lg:w-2/2 min-h-96 rounded-md overflow-hidden group">
             <Image
               src={getImagePath(details?.backdrop_path)}
@@ -63,10 +67,7 @@ const MovieDetails = async ({ params: { id } }: Props) => {
             <p className="text-foreground text-sm">
               Votes: <span className=" font-medium">{details.vote_count}</span>
             </p>
-            <p className="text-foreground text-sm">
-              Release Data:{" "}
-              <span className=" font-medium">{details.release_date}</span>
-            </p>
+        
             <p className="text-foreground text-sm">
               Genres:{" "}
               {details?.genres.map((item: any) => (

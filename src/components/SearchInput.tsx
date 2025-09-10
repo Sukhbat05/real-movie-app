@@ -37,7 +37,7 @@ const SearchInput = () => {
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <Input placeholder="Search ..." {...field} className="m-2" />
+                <Input placeholder="Search ..." {...field} className="m-2 border border-foreground" />
               </FormControl>
             </FormItem>
           )}

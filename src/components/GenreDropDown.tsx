@@ -28,11 +28,11 @@ const GenreDropDown = async () => {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="text-foreground flex items-center text-sm font-medium ml-4">
-        Genre <ChevronDown className="ml-1" size={20} />
+      <DropdownMenuTrigger className="text-foreground flex items-center text-sm font-medium  border border-foreground m-2 w-25 h-10 justify-center rounded-md ">
+         <ChevronDown className="ml-1" size={20} /> Genre
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-[600px]">
-        <DropdownMenuLabel className="text-[24px] text-foreground ml-4">
+        <DropdownMenuLabel className="text-[24px] text-foreground ml-4 ">
           Genre
         </DropdownMenuLabel>
         <DropdownMenuLabel className="text-[16px] ml-4 ">

@@ -4,6 +4,7 @@ import AutoPlay from "embla-carousel-autoplay";
 import { Movie } from "../../type";
 import Image from "next/image";
 import { getImagePath } from "@/lib/getImagePath";
+import { FaStar } from "react-icons/fa";
 
 interface Props {
   movies: Movie[];
@@ -28,7 +29,11 @@ const HeroCarousel = ({ movies }: Props) => {
             />
             <div className="hidden lg:inline absolute top-0 pt-40 xl:pt-72 left-0 bg-transparent z-20 h-full w-full bg-gradient-to-r from-gray-900/90 via-transparent to-transparent p-10 space-y-5 text-white">
               <h2 className="text-5xl font-bold max-w-xl">{movie?.title}</h2>
-              <p className="max-w-xl line-clamp-3">{movie?.overview}</p>
+                    <div className=" flex items-center gap-2  m-2 text-foreground">
+                      <FaStar color="orange" />
+                      <span className="text-2xl text-foreground">{movie?.vote_average}/10</span>
+                    </div>
+              <p className="max-w-xl line-clamp-3 text-[20px]">{movie?.overview}</p>
             </div>
           </div>
         ))}
