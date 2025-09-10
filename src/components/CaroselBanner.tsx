@@ -1,4 +1,4 @@
-import { getDiscoverMovies } from "@/lib/getMovies";
+import { getNowPlayingMovies } from "@/lib/getMovies";
 import HeroCarousel from "./HeroCareusol";
 
 interface Props {
@@ -7,7 +7,7 @@ interface Props {
 }
 
 const CaroselBanner = async ({ id, keywords }: Props) => {
-  const movies = await getDiscoverMovies(id, keywords);
+  const movies = await getNowPlayingMovies(id, keywords);
 
   return <HeroCarousel movies={movies} />;
 };

@@ -1,6 +1,7 @@
 import CaroselBanner from "@/components/CaroselBanner";
 import MovieContainer from "@/components/MovieContainer";
 import {
+  getNowPlayingMovies,
   getPopularMovies,
   getTopRatedMovies,
   getUpcomingMovies,
@@ -25,28 +26,13 @@ import {
 export default async function Home() {
   const upcomingMovies = await getUpcomingMovies();
   const popularMovies = await getPopularMovies();
-
+  const nowPlaying = await getNowPlayingMovies();
   const topRatedMovies = await getTopRatedMovies();
 
   return (
-    <main className="w-[1440px]   justify-center m-auto">
-      <Carousel className="w-full ">
-        <CarouselContent>
-          {Array.from({ length: 3 }).map((_, index) => (
-            <CarouselItem key={index}>
-              <div className="p-1 h-[900px]">
-                <img
-                  className="absolute"
-                  src="https://mag.lexus.co.uk/wp-content/uploads/sites/3/2022/08/lsescnet-10-scaled.jpg"
-                />
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
-      <div className="flex flex-col space-y-2 mt-23">
+    <main className="w-[1440px]   justify-center m-auto ">
+      <CaroselBanner />
+      <div className="flex flex-col  mt-23 m-auto">
         <MovieContainer movies={upcomingMovies} title="Upcoming" />
         <MovieContainer movies={popularMovies} title="Popular" />
 

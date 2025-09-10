@@ -23,6 +23,12 @@ const fetcher = async (url: URL, cacheTime?: number) => {
   return data;
 };
 
+export const getNowPlayingMovies = async (id?: string, keywords?: string) => {
+  const url = new URL("https://api.themoviedb.org/3/movie/now_playing");
+  const data = await fetcher(url);
+  return data.results;
+};
+
 export const getUpcomingMovies = async () => {
   const url = new URL("https://api.themoviedb.org/3/movie/upcoming");
   const data = await fetcher(url);

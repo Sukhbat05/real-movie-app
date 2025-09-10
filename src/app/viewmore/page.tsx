@@ -1,5 +1,6 @@
 import MovieContainer from "@/components/MovieContainer";
 import {
+  getNowPlayingMovies,
   getPopularMovies,
   getTopRatedMovies,
   getUpcomingMovies,
@@ -14,7 +15,9 @@ interface Props {
 const ViewMorePage = async ({ searchParams: { title } }: Props) => {
   let movies: any = null;
 
-  if (title === "Upcoming") {
+  if (title === "Now Playing") {
+    movies = await getNowPlayingMovies();
+  } else if (title === "Upcoming") {
     movies = await getUpcomingMovies();
   } else if (title === "Top Rated") {
     movies = await getTopRatedMovies();

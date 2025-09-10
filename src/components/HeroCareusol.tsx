@@ -14,8 +14,11 @@ const HeroCarousel = ({ movies }: Props) => {
   return (
     <div className="overflow-hidden cursor-pointer relative" ref={emblaRef}>
       <div className="flex">
-        {movies?.map((movie) => (
-          <div key={movie?.id} className="flex-full min-w-0 relative">
+        {movies.map((movie) => (
+          <div
+            key={movie?.id}
+            className="flex-full relative embla__slide flex-[0_0_100%] min-w-0 px-2"
+          >
             <Image
               src={getImagePath(movie?.backdrop_path, true)}
               alt={movie?.title}
