@@ -28,17 +28,17 @@ const GenreDropDown = async () => {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="text-foreground flex items-center text-sm font-medium ">
+      <DropdownMenuTrigger className="text-foreground flex items-center text-sm font-medium ml-4">
         Genre <ChevronDown className="ml-1" size={20} />
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-[577px]">
-        <DropdownMenuLabel className="text-[24px] text-foreground">
+      <DropdownMenuContent className="w-[600px]">
+        <DropdownMenuLabel className="text-[24px] text-foreground ml-4">
           Genre
         </DropdownMenuLabel>
-        <DropdownMenuLabel className="text-[16px]">
+        <DropdownMenuLabel className="text-[16px] ml-4 ">
           See lists of movies by genre
         </DropdownMenuLabel>
-        <div className="flex w-[577px]  flex-wrap gap-2 my-6">
+        <div className="flex w-[577px]  flex-wrap gap-2 m-4">
           {data?.genres?.map((genre) => (
             <DropdownMenuItem
               key={genre?.id}
