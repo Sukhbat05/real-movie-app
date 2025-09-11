@@ -66,13 +66,26 @@ export const getSearchedMovies = async (term: string) => {
 };
 
 export const getMovieVideos = async (id?: string) => {
-  const url = new URL(`https://api.themoviedb.org/3/movie/${id}/videos`);
+  const url = new URL(
+    `https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`
+  );
 
   const data = await fetcher(url);
   return data.results;
 };
+
+console.log("Movie!", getMovieVideos);
 export const getMovieDetails = async (id?: string) => {
   const url = new URL(`https://api.themoviedb.org/3/movie/${id}`);
+
+  const data = await fetcher(url);
+  return data;
+};
+
+export const getCredits = async (id?: string) => {
+  const url = new URL(
+    `https://api.themoviedb.org/3/movie/${id}/credits?language=en-US`
+  );
 
   const data = await fetcher(url);
   return data;

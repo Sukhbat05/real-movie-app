@@ -22,6 +22,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { DialogDemo } from "@/components/VideoDialog";
 
 export default async function Home() {
   const upcomingMovies = await getUpcomingMovies();

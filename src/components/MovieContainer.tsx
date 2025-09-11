@@ -28,7 +28,7 @@ const MovieContainer = ({ title, movies, isVertical }: Props) => {
         )}
       >
         {isVertical
-          ? movies?.map((movie) => (
+          ? movies?.slice(0, 10).map((movie) => (
               <div
                 key={movie.id}
                 className={cn(
@@ -46,7 +46,9 @@ const MovieContainer = ({ title, movies, isVertical }: Props) => {
                 </div>
               </div>
             ))
-          : movies?.map((movie) => <MovieCard key={movie?.id} movie={movie} />)}
+          : movies
+              ?.slice(0, 10)
+              .map((movie) => <MovieCard key={movie?.id} movie={movie} />)}
       </div>
     </div>
   );
