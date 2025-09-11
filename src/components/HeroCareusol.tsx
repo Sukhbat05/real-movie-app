@@ -5,21 +5,26 @@ import { Movie } from "../../type";
 import Image from "next/image";
 import { getImagePath } from "@/lib/getImagePath";
 import { FaStar } from "react-icons/fa";
-import { DialogDemo } from "./VideoDialog";
+
+
 
 interface Props {
   movies: Movie[];
+ 
 }
 
-const HeroCarousel = ({ movies }: Props) => {
+
+
+const HeroCarousel = ({ movies}: Props) => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [
     AutoPlay({
-      delay: 2000,
+      delay: 2000
     }),
   ]);
   console.log("movies", movies);
   return (
     <div className="overflow-hidden cursor-pointer relative" ref={emblaRef}>
+      
       <div className="flex">
         {movies?.slice(0, 5).map((movie) => (
           <div
@@ -33,6 +38,7 @@ const HeroCarousel = ({ movies }: Props) => {
               height={1080}
               priority={true}
             />
+            
             <div className="hidden lg:inline absolute top-0 pt-40 xl:pt-72 left-0 bg-transparent z-20 h-full w-full p-10 space-y-5 text-white">
               <p className="h-6 text-3xl">Now Playing:</p>
               <h2 className="text-5xl font-bold max-w-xl">{movie?.title}</h2>
@@ -46,7 +52,7 @@ const HeroCarousel = ({ movies }: Props) => {
                 {movie?.overview}
               </p>
               <div>
-                <DialogDemo />
+                
               </div>
             </div>
           </div>

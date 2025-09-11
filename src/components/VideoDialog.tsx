@@ -21,9 +21,10 @@ export function DialogDemo() {
           <DialogTrigger asChild>
             <Button variant="outline" className="text-foreground rounded-3xl">
               <CiPlay1 />
+              
             </Button>
           </DialogTrigger>
-
+      
           <DialogTitle className="">Play Trailer</DialogTitle>
         </div>
         <DialogContent className="sm:max-w-[997px] h-[561px]"></DialogContent>

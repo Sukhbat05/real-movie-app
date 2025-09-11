@@ -1,6 +1,5 @@
 import MovieContainer from "@/components/MovieContainer";
-
-import { YouTubeDialog } from "@/components/YouTubeDialog";
+import VideoPlayer from "@/components/VideoPlayer";
 
 import { getImagePath } from "@/lib/getImagePath";
 import {
@@ -9,9 +8,13 @@ import {
   getPopularMovies,
   getCredits,
 } from "@/lib/getMovies";
-
+import { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Movie Studio Clone || Movie Details page",
+};
 
 interface Props {
   params: {
@@ -19,12 +22,20 @@ interface Props {
   };
 }
 
-const MovieDetails = async ({ params: { id } }: Props) => {
-  const videos: any = await getMovieVideos(id);
-  const trailer = videos.find(
-    (v: any) => v.site === "YouTube" && v.type === "Trailer"
-  );
-
+const MovieDetailsVideo = async ({ params: { id } }: Props) => {
+  const movies = await getMovieVideos(id);
+  const videos = movies.slice(0, 1).map((movie: any) => ({
+    id: movie.id,
+    iso_639_1: movie.iso_639_1,
+    iso_3166_1: movie.iso_3166_1,
+    key: movie.key,
+    name: movie.name,
+    official: movie.official,
+    published_at: movie.published_at,
+    site: movie.site,
+    size: movie.size,
+    type: movie.type,
+  }));
   const details: any = await getMovieDetails(id);
   const popoularMovies = await getPopularMovies();
   const credits: any = await getCredits(id);
@@ -57,18 +68,8 @@ const MovieDetails = async ({ params: { id } }: Props) => {
                 className="w-full h-full object-cover shadow-md shadow-gray-900 drop-shadow-xl group-hover:scale-110 duration-500"
               />
             </div>
-            <div className="w-[760px] h-[428px] relative rounded-md overflow-hidden group">
-              <Image
-                src={getImagePath(details?.backdrop_path)}
-                alt={details?.title}
-                width={1440}
-                height={1080}
-                className="w-full  h-full  object-cover shadow-md shadow-gray-900 drop-shadow-xl group-hover:scale-110 duration-500"
-              />
-
-              <div className="absolute top-80 left-10 bg-white text-black rounded-2xl ">
-                <YouTubeDialog videoKey={trailer.key} />
-              </div>
+            <div className="">
+              <VideoPlayer videos={videos} />
             </div>
           </div>
           <div className="w-full lg:w-2/2 flex flex-col gap-2 justify-center mt-5 ">
@@ -107,11 +108,15 @@ const MovieDetails = async ({ params: { id } }: Props) => {
         </div>
       </div>
 
-      <div className="mt-6 m-auto flex-wrap ">
-        <MovieContainer movies={popoularMovies} title="more like this" />
+      <div className="mt-6 m-auto">
+        <MovieContainer
+          movies={popoularMovies}
+          title="more like this"
+          isVertical
+        />
       </div>
     </div>
   );
 };
 
-export default MovieDetails;
+export default MovieDetailsVideo;
