@@ -14,7 +14,7 @@ const GenreMovieCard = ({ movie }: { movie: Movie }) => {
   return (
     <div
       onClick={hanldeRoute}
-      className="h-[430px] bg-purple-300   relative #F4F4F5 cursor-pointer transform hover:scale-105 transition duration-200 ease-out hover:drop-shadow-lg m-5"
+      className="h-[430px] bg-secondary   relative #F4F4F5 cursor-pointer transform hover:scale-105 transition duration-200 ease-out hover:drop-shadow-lg m-5"
     >
       {/* <div className="absolute inset-0 bg-gradient-to-b from-gray-200/0 via-gray-900/10 to-gray-100 dark:to-[#1A1C29]/80 z-10" /> */}
 
@@ -25,7 +25,7 @@ const GenreMovieCard = ({ movie }: { movie: Movie }) => {
         height={1080}
         priority={true}
         unoptimized
-        className="w-[165px] h-[331px] object-cover shadow-md shadow-gray-900 drop-shadow-xl"
+        className="w-[165px] h-[331px] object-cover shadow-md shadow-gray-900 drop-shadow-xl max-sm:w-[155px]"
       />
       <div className=" flex items-center gap-2  m-2 text-foreground">
         <FaStar color="orange" />

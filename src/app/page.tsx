@@ -13,7 +13,7 @@ export default async function Home() {
   const topRatedMovies = await getTopRatedMovies();
 
   return (
-    <main className="w-full  justify-center m-auto max-sm:flex-col">
+    <main className="w-full  justify-center m-auto  max-sm:flex-col">
       <CaroselBanner />
       <div className="flex flex-col  mt-23 m-auto">
         <MovieContainer movies={upcomingMovies} title="Upcoming" />

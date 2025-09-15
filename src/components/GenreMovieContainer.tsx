@@ -18,7 +18,7 @@ const GenreMovieContainer = ({ title, movies, isVertical }: Props) => {
       </div>
       <div
         className={cn(
-          "flex space-x-4 flex-wrap px-5 lg:px-10 py-5 scrollbar-hide my-5",
+          "flex space-x-4 flex-wrap  lg:px-10  scrollbar-hide ml-5",
           isVertical && "space-x-0 space-y-12"
         )}
       >

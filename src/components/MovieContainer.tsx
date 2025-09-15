@@ -33,11 +33,11 @@ const MovieContainer = ({ title, movies, isVertical }: Props) => {
                 key={movie.id}
                 className={cn(
                   isVertical &&
-                    "flex flex-col space-y-5 mb-5 items-center lg:flex-row space-x-5"
+                    "flex  space-y-5 mb-5 items-center lg:flex-row space-x-5"
                 )}
               >
                 <MovieCard movie={movie} />
-                <div className="max-w-2xl">
+                <div className="max-w-2xl  max-sm:hidden">
                   <p className="font-bold">
                     {movie?.title} ({movie?.release_date?.split("-")[0]})
                   </p>

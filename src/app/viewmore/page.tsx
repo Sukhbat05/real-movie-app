@@ -26,8 +26,11 @@ const ViewMorePage = async ({ searchParams: { title } }: Props) => {
   }
 
   return (
-    <div className="py-10 w-[1440px] justify-center m-auto">
-      <h2 className="text-3xl font-bold px-10 mb-5 ">Results of {title}</h2>
+    <div className="py-10 w-full ">
+      <h2 className="text-3xl font-bold px-10 mb-5 max-sm:text-2xl">
+        Results of "{title}"
+      </h2>
+
       <MovieContainer movies={movies} isVertical={true} />
     </div>
   );
