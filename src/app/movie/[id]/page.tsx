@@ -38,7 +38,7 @@ const MovieDetails = async ({ params: { id } }: Props) => {
 
   return (
     <div>
-      <div className="px-10 w-full  justify-center flex">
+      <div className="px-10 w-full flex justify-center ">
         <div className="py-10 flex-col lg:flex-row items-center gap-5 justify-center ">
           <h2 className="text-2xl font-semibold mb-4">
             {details?.original_title}

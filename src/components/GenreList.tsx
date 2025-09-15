@@ -19,7 +19,7 @@ const GenreList = async () => {
   const data = (await response.json()) as Genres;
 
   return (
-    <div className="flex w-[600px]  flex-wrap gap-4 m-4 max-sm:gap-1">
+    <div className="flex w-full  flex-wrap gap-4 m-4 max-sm:gap-1">
       {data?.genres?.map((genre) => (
         <div
           key={genre?.id}
