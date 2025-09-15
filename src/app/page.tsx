@@ -1,26 +1,12 @@
-import CaroselBanner from "@/components/CaroselBanner";
-import MovieContainer from "@/components/MovieContainer";
-import {
-  getPopularMovies,
-  getTopRatedMovies,
-  getUpcomingMovies,
-} from "@/lib/getMovies";
+import HomePage from "@/components/HomePage";
+import HomepageSkeleton from "@/components/HomepageSkeleton";
 
-export default async function Home() {
-  const upcomingMovies = await getUpcomingMovies();
-  const popularMovies = await getPopularMovies();
+import { Suspense } from "react";
 
-  const topRatedMovies = await getTopRatedMovies();
-
+export default function Home() {
   return (
-    <main className="w-full  justify-center m-auto  max-sm:flex-col">
-      <CaroselBanner />
-      <div className="flex flex-col  mt-23 m-auto">
-        <MovieContainer movies={upcomingMovies} title="Upcoming" />
-        <MovieContainer movies={popularMovies} title="Popular" />
-
-        <MovieContainer movies={topRatedMovies} title="Top Rated" />
-      </div>
-    </main>
+    <Suspense fallback={<HomepageSkeleton/>}>
+      <HomePage />
+    </Suspense>
   );
 }

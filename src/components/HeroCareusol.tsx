@@ -5,12 +5,14 @@ import { Movie } from "../../type";
 import Image from "next/image";
 import { getImagePath } from "@/lib/getImagePath";
 import { FaStar } from "react-icons/fa";
+import { YouTubeDialog } from "./YouTubeDialog";
 
 interface Props {
   movies: Movie[];
 }
 
 const HeroCarousel = ({ movies }: Props) => {
+  
   const [emblaRef] = useEmblaCarousel({ loop: true }, [
     AutoPlay({
       delay: 2500,
@@ -70,6 +72,9 @@ const HeroCarousel = ({ movies }: Props) => {
               <p className="max-w-xl line-clamp-3 text-[20px] mt-5">
                 {movie?.overview}
               </p>
+              {/* <div className="max-sm:mt-5 hidden max-sm:block">
+                <YouTubeDialog />
+              </div> */}
             </div>
           </div>
         ))}

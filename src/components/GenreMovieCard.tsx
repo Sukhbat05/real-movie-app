@@ -25,7 +25,7 @@ const GenreMovieCard = ({ movie }: { movie: Movie }) => {
         height={1080}
         priority={true}
         unoptimized
-        className="w-[165px] h-[331px] object-cover shadow-md shadow-gray-900 drop-shadow-xl max-sm:w-[148px]"
+        className="w-[165px] h-[331px] object-cover shadow-md shadow-gray-900 drop-shadow-xl max-sm:w-[155px]"
       />
       <div className=" flex items-center gap-2  m-2 text-foreground">
         <FaStar color="orange" />
