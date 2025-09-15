@@ -25,13 +25,13 @@ const MovieCard = ({ movie }: { movie: Movie }) => {
         height={1080}
         priority={true}
         unoptimized
-        className="w-[230px] h-[340px] object-cover shadow-md shadow-gray-900 drop-shadow-xl max-sm:w-[160px] max-sm:h-[230px]  "
+        className="w-[230px] h-[340px] object-cover shadow-md shadow-gray-900 drop-shadow-xl max-sm:w-[150px] max-sm:h-[230px]  "
       />
-      <div className=" flex items-center gap-2  m-2 text-foreground">
+      <div className=" flex items-center gap-2  m-2 text-foreground text-[16px] mt-2 max-sm:text-[12px]">
         <FaStar color="orange" />
         <span>{movie?.vote_average}/10</span>
       </div>
-      <p className="absolute z-20 bottom-5 left-5 text-foreground ">
+      <p className="absolute z-20 bottom-2 left-2 text-foreground text-[18px] max-sm:text-[14px]">
         {movie?.title}
       </p>
     </div>
