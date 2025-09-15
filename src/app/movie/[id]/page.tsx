@@ -46,9 +46,9 @@ const MovieDetails = async ({ params: { id } }: Props) => {
           <p className="text-foreground  mb-5 font-medium">
             {details.release_date}
           </p>
-          <div className="flex gap-4 max-[500px]:flex-col">
+          <div className="flex gap-4 max-sm:flex-col">
             {" "}
-            <div className="w-[290px] h-[428px]  rounded-md overflow-hidden group max-[500px]:w-25 max-[500px]:h-37 max-[500px]:hidden">
+            <div className="w-[290px] h-[428px]  rounded-md overflow-hidden group max-sm:w-25 max-sm:h-37 max-sm:hidden">
               <Image
                 src={getImagePath(details?.backdrop_path)}
                 alt={details?.title}
@@ -57,7 +57,7 @@ const MovieDetails = async ({ params: { id } }: Props) => {
                 className="w-full h-full object-cover shadow-md shadow-gray-900 drop-shadow-xl group-hover:scale-110 duration-500"
               />
             </div>
-            <div className="w-[760px] h-[428px] relative rounded-md overflow-hidden group max-[500px]:w-full max-[500px]:h-37">
+            <div className="w-[760px] h-[428px] relative rounded-md overflow-hidden group max-sm:w-full max-sm:h-37">
               <Image
                 src={getImagePath(details?.backdrop_path)}
                 alt={details?.title}
@@ -71,8 +71,8 @@ const MovieDetails = async ({ params: { id } }: Props) => {
               </div>
             </div>
           </div>
-          <div className="max-[500px]:flex ">
-            <div className="w-[290px] h-[428px] hidden rounded-md overflow-hidden group max-[375px]:w-25 max-[500px]:h-37 max-[500px]:block mt-5">
+          <div className="max-sm:flex ">
+            <div className="w-[290px] h-[428px] hidden rounded-md overflow-hidden group max-sm:w-25 max-sm:h-37 max-sm:block mt-5">
               <Image
                 src={getImagePath(details?.backdrop_path)}
                 alt={details?.title}
@@ -81,7 +81,7 @@ const MovieDetails = async ({ params: { id } }: Props) => {
                 className="w-full h-full object-cover shadow-md shadow-gray-900 drop-shadow-xl group-hover:scale-110 duration-500"
               />
             </div>
-            <div className="w-full lg:w-2/2 flex flex-col gap-2 justify-center mt-5 max-[500px]:w-50">
+            <div className="w-full lg:w-2/2 flex flex-col gap-2 justify-center mt-5 max-sm:w-50">
               <p className="text-foreground text-sm ">
                 {details?.genres.map((item: any) => (
                   <span
