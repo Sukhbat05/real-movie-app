@@ -48,7 +48,7 @@ const MovieDetails = async ({ params: { id } }: Props) => {
           </p>
           <div className="flex gap-4 max-[500px]:flex-col">
             {" "}
-            <div className="w-[290px] h-[428px]  rounded-md overflow-hidden group max-[375px]:w-25 max-[500px]:h-37 max-[500px]:hidden">
+            <div className="w-[290px] h-[428px]  rounded-md overflow-hidden group max-[500px]:w-25 max-[500px]:h-37 max-[500px]:hidden">
               <Image
                 src={getImagePath(details?.backdrop_path)}
                 alt={details?.title}
@@ -57,7 +57,7 @@ const MovieDetails = async ({ params: { id } }: Props) => {
                 className="w-full h-full object-cover shadow-md shadow-gray-900 drop-shadow-xl group-hover:scale-110 duration-500"
               />
             </div>
-            <div className="w-[760px] h-[428px] relative rounded-md overflow-hidden group max-[375px]:w-full max-[500px]:h-37">
+            <div className="w-[760px] h-[428px] relative rounded-md overflow-hidden group max-[500px]:w-full max-[500px]:h-37">
               <Image
                 src={getImagePath(details?.backdrop_path)}
                 alt={details?.title}
