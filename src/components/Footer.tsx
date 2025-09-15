@@ -3,11 +3,11 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="bg-[#4338CA] px-10 py-20  gap-10 flex  w-full m-auto justify-between text-foreground">
+    <div className="bg-[#4338CA]  px-10 py-20  gap-10 flex  w-full m-auto justify-between text-foreground max-sm:flex-col max-sm:mx">
       <div>
         <Link href={"/"}>
           <Image
-            src="/images/moviez.png"
+            src="/images/logom.png"
             alt="Logo"
             width={120}
             height={100}
