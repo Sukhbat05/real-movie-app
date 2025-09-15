@@ -17,7 +17,7 @@ export const MobileSearch = () => {
       </Button>
 
       {isSearching && (
-        <div>
+        <div className="max-sm:w-30">
           <SearchInput />
         </div>
       )}
