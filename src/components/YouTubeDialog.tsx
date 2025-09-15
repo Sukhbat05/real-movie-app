@@ -14,7 +14,10 @@ interface YouTubeDialogProps {
   title?: string;
 }
 
-export function YouTubeDialog({ videoKey, title = "Trailer" }: YouTubeDialogProps) {
+export function YouTubeDialog({
+  videoKey,
+  title = "Trailer",
+}: YouTubeDialogProps) {
   return (
     <Dialog>
       <DialogTrigger asChild className="">
@@ -27,7 +30,6 @@ export function YouTubeDialog({ videoKey, title = "Trailer" }: YouTubeDialogProp
       <DialogContent className="sm:max-w-[997px] w-full max-w-full p-0">
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
-     
         </DialogHeader>
 
         <div className="relative aspect-video w-full rounded-md overflow-hidden ">

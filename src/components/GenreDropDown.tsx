@@ -27,31 +27,33 @@ const GenreDropDown = async () => {
   const data = (await response.json()) as Genres;
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger className="text-foreground flex items-center text-sm font-medium  border border-foreground m-2 w-25 h-10 justify-center rounded-md ">
-        <ChevronDown className="ml-1" size={20} /> Genre
-      </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-[600px]">
-        <DropdownMenuLabel className="text-[24px] text-foreground ml-4 ">
-          Genre
-        </DropdownMenuLabel>
-        <DropdownMenuLabel className="text-[16px] ml-4 ">
-          See lists of movies by genre
-        </DropdownMenuLabel>
-        <div className="flex w-[577px]  flex-wrap gap-2 m-4">
-          {data?.genres?.map((genre) => (
-            <DropdownMenuItem
-              key={genre?.id}
-              className="border border-gray-200 h-5 "
-            >
-              <Link href={`/genre/${genre?.id}?genre=${genre.name}`}>
-                {genre?.name}
-              </Link>
-            </DropdownMenuItem>
-          ))}
-        </div>
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <div className="max-sm:hidden">
+      <DropdownMenu>
+        <DropdownMenuTrigger className="text-foreground flex items-center text-sm font-medium  border border-foreground m-2 w-25 h-10 justify-center rounded-md ">
+          <ChevronDown className="ml-1" size={20} /> Genre
+        </DropdownMenuTrigger>
+        <DropdownMenuContent className="w-[600px]">
+          <DropdownMenuLabel className="text-[24px] text-foreground ml-4 ">
+            Genre
+          </DropdownMenuLabel>
+          <DropdownMenuLabel className="text-[16px] ml-4 ">
+            See lists of movies by genre
+          </DropdownMenuLabel>
+          <div className="flex w-[577px]  flex-wrap gap-2 m-4">
+            {data?.genres?.map((genre) => (
+              <DropdownMenuItem
+                key={genre?.id}
+                className="border border-gray-200 h-5 "
+              >
+                <Link href={`/genre/${genre?.id}?genre=${genre.name}`}>
+                  {genre?.name}
+                </Link>
+              </DropdownMenuItem>
+            ))}
+          </div>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </div>
   );
 };
 

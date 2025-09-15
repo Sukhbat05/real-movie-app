@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="bg-[#4338CA] px-10 py-20  gap-10 flex  w-[1440px] m-auto justify-between text-foreground">
+    <div className="bg-[#4338CA] px-10 py-20  gap-10 flex  w-full m-auto justify-between text-foreground">
       <div>
         <Link href={"/"}>
           <Image
@@ -37,7 +37,7 @@ const Footer = () => {
         </div>
         <div className="mt-2 text-foreground">
           <div>Follow Us</div>
-          <div className="flex gap-2 mt-4">
+          <div className="flex gap-2 mt-4 max-sm:flex-col">
             <p>Facebook</p>
             <p>Intagram</p>
             <p>Twitter</p>
