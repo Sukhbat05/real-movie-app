@@ -16,7 +16,7 @@ const GenreDropDown = async () => {
     method: "GET",
     headers: {
       accept: "application/json",
-      Authorization: `Bearer ${process.env.TMDB_READ_ACCESS_KEY}`,
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_KEY_TMDB_READ_ACCESS_KEY}`,
     },
     next: {
       revalidate: 60 * 60 * 24,
@@ -30,7 +30,7 @@ const GenreDropDown = async () => {
     <div className="max-sm:hidden">
       <DropdownMenu>
         <DropdownMenuTrigger className="text-foreground flex items-center  text-[14px] font-medium  border border-foreground m-2 w-25 h-10 justify-center rounded-md ">
-          <ChevronDown className="ml-1  items-center" size={20} />  Genre
+          <ChevronDown className="ml-1  items-center" size={20} /> Genre
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-[600px]">
           <DropdownMenuLabel className="text-[24px] text-foreground ml-4 ">

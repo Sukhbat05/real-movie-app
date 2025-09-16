@@ -22,7 +22,7 @@ const HeroCarousel = ({ movies }: Props) => {
     >
       <div className="flex">
         {movies?.slice(0, 5).map((movie) => (
-          <CarouselCard movie={movie} />
+          <CarouselCard movie={movie} key={movie.id} />
         ))}
       </div>
     </div>

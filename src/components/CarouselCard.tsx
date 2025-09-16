@@ -8,14 +8,18 @@ import { getImagePath } from "@/lib/getImagePath";
 import { FaStar } from "react-icons/fa";
 import { YouTubeDialog } from "./YouTubeDialog";
 
+type trailerType = {
+  key: string;
+};
+
 export const CarouselCard = ({ movie }: { movie: Movie }) => {
-  const [trailer, setTrailer] = useState("");
+  const [trailer, setTrailer] = useState<trailerType>({ key: "" });
   useEffect(() => {
     const getMovieTrailer = async () => {
       console.log("id", movie.id);
       const videos: any = await getMovieVideos(movie.id);
       console.log("VIDEOS", videos);
-      const trailer = videos.find(
+      const trailer: trailerType = videos.find(
         (v: any) => v.site === "YouTube" && v.type === "Trailer"
       );
       console.log("Trailer", trailer);

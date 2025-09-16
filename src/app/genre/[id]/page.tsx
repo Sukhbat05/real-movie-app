@@ -52,7 +52,7 @@ const GenrePage = async ({
           <GenreMovieContainer movies={movies} isVertical />
         </div>
         <div className="w-full  lg:w-1/2 h-fit mt-8 hidden max-sm:block my-10">
-          <div className="">
+          <div>
             <p className="text-[24px] text-foreground font-bold">Genre</p>
             <p className="text-foreground text-[20px] mt-5">
               See lists of movies by genre
