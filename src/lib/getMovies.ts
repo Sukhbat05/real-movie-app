@@ -10,7 +10,7 @@ const fetcher = async (url: URL, cacheTime?: number) => {
     method: "GET",
     headers: {
       accept: "application/json",
-      Authorization: `Bearer ${process.env.TMDB_READ_ACCESS_KEY}`,
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_KEY_TMDB_READ_ACCESS_KEY}`,
     },
     next: {
       revalidate: cacheTime || 60 * 60 * 24,
@@ -81,7 +81,7 @@ export const getCredits = async (id?: string) => {
   return data;
 };
 
-export const getMovieVideos = async (id?: string) => {
+export const getMovieVideos = async (id?: number | string) => {
   const url = new URL(
     `https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`
   );

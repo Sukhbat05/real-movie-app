@@ -13,13 +13,7 @@ import {
 import Image from "next/image";
 import React from "react";
 
-interface Props {
-  params: {
-    id: string;
-  };
-}
-
-const DetailPage = async ({ params: { id } }: Props) => {
+const DetailPage = async ({ id }: { id: string }) => {
   const videos: any = await getMovieVideos(id);
   const trailer = videos.find(
     (v: any) => v.site === "YouTube" && v.type === "Trailer"

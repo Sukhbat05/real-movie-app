@@ -3,10 +3,20 @@ import GenreMovieContainer from "@/components/GenreMovieContainer";
 import MovieContainer from "@/components/MovieContainer";
 import { DropdownMenuContent } from "@/components/ui/dropdown-menu";
 import { getDiscoverMovies } from "@/lib/getMovies";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
 
 interface Props {
   params: {
     id: string;
+    page: string;
   };
   searchParams: {
     genre: string;
@@ -14,10 +24,11 @@ interface Props {
 }
 
 const GenrePage = async ({
-  params: { id },
+  params: { id, page },
   searchParams: { genre },
 }: Props) => {
   const movies = await getDiscoverMovies(id);
+  const url = `/genre?id=${id}&name=${genre}`;
   return (
     <div className="w-full mx-10 max-sm:ml-0">
       <div className="text-4xl h-9 mt-13 font-bold ">Search filter</div>
