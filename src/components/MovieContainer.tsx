@@ -15,7 +15,7 @@ const MovieContainer = ({ title, movies, isVertical }: Props) => {
       <div className="mx-13 py-2 flex items-center justify-between  relative mb-4 ">
         <h2 className="text-sm uppercase font-bold tracking-wider">{title}</h2>
         <Link
-          href={{ pathname: "/viewmore", query: { title: title } }}
+          href={{ pathname: "/seemore", query: { title: title } }}
           className=" text-xs text-foreground uppercase px-2 py-1 rounded-md border-indigo-600 font-semibold "
         >
           See more

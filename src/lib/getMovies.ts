@@ -47,12 +47,18 @@ export const getPopularMovies = async () => {
   return data.results;
 };
 
-export const getDiscoverMovies = async (id?: string, keywords?: string) => {
+export const getDiscoverMovies = async (
+  id?: string,
+  keywords?: string,
+  page?: string
+) => {
   const url = new URL("https://api.themoviedb.org/3/discover/movie");
 
   keywords && url.searchParams.set("with_keywords", keywords);
   id && url.searchParams.set("with_genres", id);
+  page && url.searchParams.set("page", page);
 
+  console.log("URL!!!", url);
   const data = await fetcher(url);
   return data.results;
 };

@@ -39,7 +39,7 @@ const GenreDropDown = async () => {
           <DropdownMenuLabel className="text-[16px] ml-4 ">
             See lists of movies by genre
           </DropdownMenuLabel>
-          <div className="flex w-[577px]  flex-wrap gap-2 m-4">
+          <div className="flex w-[577px]  flex-wrap gap-2 m-4 hover">
             {data?.genres?.map((genre) => (
               <DropdownMenuItem
                 key={genre?.id}

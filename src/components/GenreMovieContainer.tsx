@@ -37,7 +37,9 @@ const GenreMovieContainer = ({ title, movies, isVertical }: Props) => {
                 </div>
               </div>
             ))
-          : movies?.map((movie) => <MovieCard key={movie?.id} movie={movie} />)}
+          : movies?.map((movie) => (
+              <GenreMovieCard key={movie?.id} movie={movie} />
+            ))}
       </div>
     </div>
   );

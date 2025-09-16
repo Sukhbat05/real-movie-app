@@ -16,19 +16,19 @@ import {
 interface Props {
   params: {
     id: string;
-    page: string;
   };
   searchParams: {
     genre: string;
+    page: string;
   };
 }
 
 const GenrePage = async ({
-  params: { id, page },
-  searchParams: { genre },
+  params: { id },
+  searchParams: { genre, page },
 }: Props) => {
-  const movies = await getDiscoverMovies(id);
-  const url = `/genre?id=${id}&name=${genre}`;
+  const movies = await getDiscoverMovies(id, undefined, page);
+  const url = `/genre/${id}?genre=${genre}`;
   return (
     <div className="w-full mx-10 max-sm:ml-0">
       <div className="text-4xl h-9 mt-13 font-bold ">Search filter</div>
@@ -63,6 +63,49 @@ const GenrePage = async ({
           </div>
         </div>
       </div>
+      <Pagination className="flex justify-center mb-10">
+        <PaginationContent>
+          <PaginationItem>
+            <PaginationPrevious href={`${url}&page=${Number(page) - 1}`} />
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink
+              isActive={1 === Number(page)}
+              href={`${url}&page=1`}
+            >
+              1
+            </PaginationLink>
+          </PaginationItem>
+          <>
+            {Array.from({ length: 100 })
+              .splice(4, Number(page) + 4)
+              .map((_, i) => (
+                <div key={i}>
+                  {i !== 0 && (
+                    <PaginationItem>
+                      <PaginationLink
+                        isActive={i + 1 === Number(page)}
+                        href={`${url}&page=${i + 1}`}
+                      >
+                        {i + 1}
+                        {/* {Number(page) >= 7 ? i++ : i + 1 === Number(page)} */}
+                      </PaginationLink>
+                    </PaginationItem>
+                  )}
+                </div>
+              ))}
+          </>
+          <PaginationItem>
+            <PaginationEllipsis />
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink href={`${url}&page=5`}>5</PaginationLink>
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationNext href={`${url}&page=${Number(page) + 1}`} />
+          </PaginationItem>
+        </PaginationContent>
+      </Pagination>
     </div>
   );
 };

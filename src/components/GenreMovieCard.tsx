@@ -27,11 +27,11 @@ const GenreMovieCard = ({ movie }: { movie: Movie }) => {
         unoptimized
         className="w-[165px] h-[331px] object-cover shadow-md shadow-gray-900 drop-shadow-xl max-sm:w-[155px]"
       />
-      <div className=" flex items-center gap-2  m-2 text-foreground">
+      <div className=" flex items-center gap-2  mt-1 text-foreground">
         <FaStar color="orange" />
         <span>{movie?.vote_average}/10</span>
       </div>
-      <p className="absolute z-20 bottom-5 left-5 text-foreground">
+      <p className="absolute z-20  left-1 text-foreground top-90">
         {movie?.title}
       </p>
     </div>
