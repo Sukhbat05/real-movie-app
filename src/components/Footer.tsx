@@ -9,10 +9,10 @@ const Footer = () => {
           <Image
             src="/images/logom.png"
             alt="Logo"
-            width={120}
-            height={100}
+            width={80}
+            height={60}
             priority={true}
-            className="cursor-pointer w-40 h-auto"
+            className="cursor-pointer w-[92px] h-auto "
           />
         </Link>
         <p className=" text-sm leading-6 tracking-wide mt-5 max-w-72">

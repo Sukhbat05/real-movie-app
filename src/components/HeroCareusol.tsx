@@ -17,7 +17,7 @@ const HeroCarousel = ({ movies }: Props) => {
   ]);
   return (
     <div
-      className="overflow-hidden cursor-pointer relative w-full m-auto "
+      className="overflow-hidden cursor-pointer relative w-full m-auto max-w-[1440px]"
       ref={emblaRef}
     >
       <div className="flex">

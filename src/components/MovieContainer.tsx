@@ -11,9 +11,9 @@ type Props = {
 
 const MovieContainer = ({ title, movies, isVertical }: Props) => {
   return (
-    <div className="w-full  m-auto justify-center">
-      <div className="mx-13 py-2 flex items-center justify-between  relative mb-4 ">
-        <h2 className="text-sm uppercase font-bold tracking-wider">{title}</h2>
+    <div className="w-full  m-auto justify-center max-w-[1440px]">
+      <div className="mx-20 py-2 flex items-center  justify-between relative mb-4 ">
+        <h2 className="text-sm uppercase font-bold tracking-wider ">{title}</h2>
         <Link
           href={{ pathname: "/seemore", query: { title: title } }}
           className=" text-xs text-foreground uppercase px-2 py-1 rounded-md border-indigo-600 font-semibold "
@@ -23,7 +23,7 @@ const MovieContainer = ({ title, movies, isVertical }: Props) => {
       </div>
       <div
         className={cn(
-          "flex flex-wrap justify-center px-5 lg:px-10 py-5 scrollbar-hide  ",
+          "flex flex-wrap m-auto px-5 lg:px-10 py-5 scrollbar-hide  ",
           isVertical && "flex-col space-x-0 space-y-12"
         )}
       >
