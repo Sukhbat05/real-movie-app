@@ -3,6 +3,7 @@ import GenreDropDown from "./GenreDropDown";
 import SearchInput from "./SearchInput";
 import { ModeToggle } from "./ui/mode-toggle";
 import { MobileSearch } from "./MobileSearch";
+import { SearchSection } from "./SearchSection";
 
 const Header = () => {
   return (
@@ -18,7 +19,8 @@ const Header = () => {
         <div className="flex gap-2 ">
           <GenreDropDown></GenreDropDown>
           <div className="max-sm:hidden">
-            <SearchInput></SearchInput>
+            {/* <SearchInput></SearchInput> */}
+            <SearchSection />
           </div>
         </div>
 

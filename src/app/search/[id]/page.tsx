@@ -14,6 +14,7 @@ const SearchPage = async ({ params: { id } }: Props) => {
   const movies = await getSearchedMovies(termToUse);
   const popularMovies = await getPopularMovies();
 
+  console.log("FOUND MOVIES", movies);
   return (
     <div className="w-full ">
       <h2 className="text-4xl font-bold px-10 m-5 max-sm:text-2xl">

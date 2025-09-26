@@ -1,17 +1,16 @@
-import MovieContainer from "@/components/MovieContainer";
-
 import { YouTubeDialog } from "@/components/YouTubeDialog";
 
 import { getImagePath } from "@/lib/getImagePath";
 import {
   getMovieDetails,
   getMovieVideos,
-  getPopularMovies,
   getCredits,
+  getSimilarMovies,
 } from "@/lib/getMovies";
 
 import Image from "next/image";
 import React from "react";
+import SimilarContainer from "./SimilarContainer";
 
 const DetailPage = async ({ id }: { id: string }) => {
   const videos: any = await getMovieVideos(id);
@@ -20,7 +19,7 @@ const DetailPage = async ({ id }: { id: string }) => {
   );
 
   const details: any = await getMovieDetails(id);
-  const popoularMovies = await getPopularMovies();
+  const similarMovies = await getSimilarMovies(id);
   const credits: any = await getCredits(id);
 
   const director = credits.crew.find(
@@ -29,6 +28,8 @@ const DetailPage = async ({ id }: { id: string }) => {
   const writer = credits.crew.find(
     (person: any) => person.department === "Writing"
   );
+
+  console.log(trailer);
 
   return (
     <div>
@@ -61,7 +62,7 @@ const DetailPage = async ({ id }: { id: string }) => {
               />
 
               <div className="absolute top-90 left-10 bg-white text-black rounded-2xl max-sm:top-25 max-sm:left-2">
-                <YouTubeDialog videoKey={trailer.key} />
+                <YouTubeDialog videoKey={trailer ? trailer.key : ""} />
               </div>
             </div>
           </div>
@@ -117,7 +118,12 @@ const DetailPage = async ({ id }: { id: string }) => {
       </div>
 
       <div className="mt-6 m-auto flex-wrap ">
-        <MovieContainer movies={popoularMovies} title="more like this" />
+        <SimilarContainer
+          id={id}
+          movies={similarMovies}
+          title="more like this"
+          isVertical={false}
+        />
       </div>
     </div>
   );

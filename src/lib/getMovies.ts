@@ -96,4 +96,10 @@ export const getMovieVideos = async (id?: number | string) => {
   return data.results;
 };
 
+export const getSimilarMovies = async (id?: string) => {
+  const url = new URL(`https://api.themoviedb.org/3/movie/${id}/similar`);
+  const data = await fetcher(url);
+  return data.results;
+};
+
 console.log("Movie!", getMovieVideos);

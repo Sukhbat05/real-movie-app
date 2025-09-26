@@ -30,10 +30,10 @@ const GenrePage = async ({
   const movies = await getDiscoverMovies(id, undefined, page);
   const url = `/genre/${id}?genre=${genre}`;
   return (
-    <div className="w-full mx-10 max-sm:ml-0">
-      <div className="text-4xl h-9 mt-13 font-bold ">Search filter</div>
+    <div className="w-full m-auto max-w-[1800px] ">
+      <div className="text-4xl h-9 mt-13 font-bold mx-10">Search filter</div>
       <div className="flex max-sm:flex-col">
-        <div className="w-full  lg:w-1/2 h-500 mt-8 max-sm:hidden">
+        <div className="w-full  lg:w-1/2 h-500 mt-8 max-sm:hidden mx-10">
           <div className="m-auto">
             <p className="text-[24px] text-foreground font-bold ">Genre</p>
             <p className="text-foreground text-[20px] mt-5">

@@ -63,3 +63,14 @@ export type VideoProps = {
 export type Videos = {
   videos: VideoProps[];
 };
+
+export type movieResponseType = {
+  page: number;
+  totalPages: number;
+  id: string;
+  key: string;
+  type: string;
+  name: string;
+  results: Movie[];
+  total_results: number;
+};
